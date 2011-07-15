@@ -69,13 +69,15 @@ module HTTP
 
   class Delete < Request
     def create_native_request
-      HttpDelete.new(create_uri)
+      query_string = URLEncodedUtils.format(@query_params, encoding)
+      HttpDelete.new(create_uri(query_string))
     end
   end
 
   class Put < Request
     def create_native_request
-      HttpPut.new(create_uri)
+      query_string = URLEncodedUtils.format(@query_params, encoding)
+      HttpPut.new(create_uri(query_string))
     end
   end
 
