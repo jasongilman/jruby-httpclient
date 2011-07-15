@@ -5,12 +5,12 @@
 
 Gem::Specification.new do |s|
   s.name = %q{jruby-httpclient}
-  s.version = "1.0.0.delete.param.support"
+  s.version = "1.0.1.delete.param.support"
   s.platform = Gem::Platform.new([nil, "java", nil])
 
   s.required_rubygems_version = Gem::Requirement.new("> 1.3.1") if s.respond_to? :required_rubygems_version=
   s.authors = ["Adam Esterline"]
-  s.date = %q{2011-07-11}
+  s.date = %q{2011-07-15}
   s.description = %q{An HTTP client designed for use with JRuby in a threaded environment}
   s.email = %q{adam@esterlines.com}
   s.extra_rdoc_files = [
@@ -19,6 +19,7 @@ Gem::Specification.new do |s|
   ]
   s.files = [
     ".document",
+    ".rvmrc",
     "Gemfile",
     "Gemfile.lock",
     "LICENSE.txt",
