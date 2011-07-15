@@ -1,15 +1,12 @@
 module HTTP
   class Response
-    attr_reader :headers, :cookies
+    attr_reader :headers, :cookies, :body
 
     def initialize(native_response, cookies)
       @native_response = native_response
       @headers = Headers.new(native_response)
       @cookies = Cookies.new(cookies)
-    end
-
-    def body
-      @body ||= EntityUtils.to_string(@native_response.entity)
+      @body = EntityUtils.to_string(@native_response.entity)
     end
 
     def status_code
