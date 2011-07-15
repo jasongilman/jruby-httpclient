@@ -1,0 +1,39 @@
+########################################################################
+# Below you should specify the ruby interpretor and version needed
+# for this project as well as a project specific gemset name.
+########################################################################
+
+ruby_string="jruby-1.6.3"
+gemset_name="jruby-httpclient"
+
+# Request Ruby 1.8 compatibility from JRuby (the default).
+# Set JRUBY_OPTS to '--1.9' if you prefer Ruby 1.9 compatibility.
+export JRUBY_OPTS="--1.8"
+
+########################################################################
+# You shouldn't need to change anything below here...
+########################################################################
+
+# create the gemset if it does not exist
+rvm_gemset_create_on_use_flag=1
+
+# switch to default ruby version when exiting directory
+rvm_project_rvmrc_default=1
+
+# install the requisite ruby if it's not already available
+rvm_install_on_use_flag=1
+
+# Use the specific Ruby and Gemset
+rvm ${ruby_string}@${gemset_name}
+
+# Make sure bundler is available
+if [ ! -d "$GEM_HOME/gems/bundler-"* ]; then
+  gem install bundler --no-rdoc --no-ri
+fi
+
+# And bundle up what we need for the project
+if [[ $AUTO_BUNDLE_INSTALL -eq "1" ]] ; then
+  echo "Checking gem bundle.  This will take a minute if this is a new project..."
+  bundle install --local | grep -v 'Using' | grep -v 'complete' | sed '/^$/d'
+fi
+
