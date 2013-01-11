@@ -5,12 +5,12 @@
 
 Gem::Specification.new do |s|
   s.name = %q{jruby-httpclient}
-  s.version = "1.0.1.delete.param.support"
+  s.version = "1.0.1.delete.param.and.body.support"
   s.platform = Gem::Platform.new([nil, "java", nil])
 
   s.required_rubygems_version = Gem::Requirement.new("> 1.3.1") if s.respond_to? :required_rubygems_version=
   s.authors = ["Adam Esterline"]
-  s.date = %q{2011-07-15}
+  s.date = %q{2013-01-11}
   s.description = %q{An HTTP client designed for use with JRuby in a threaded environment}
   s.email = %q{adam@esterlines.com}
   s.extra_rdoc_files = [
@@ -49,6 +49,7 @@ Gem::Specification.new do |s|
     "test/http_test_server.rb",
     "vendor/commons-codec-1.4.jar",
     "vendor/commons-logging-1.1.1.jar",
+    "vendor/extras.jar",
     "vendor/httpclient-4.1.1.jar",
     "vendor/httpclient-cache-4.1.1.jar",
     "vendor/httpcore-4.1.jar",
@@ -67,15 +68,18 @@ Gem::Specification.new do |s|
       s.add_development_dependency(%q<bundler>, ["~> 1.0.0"])
       s.add_development_dependency(%q<jeweler>, ["~> 1.6.2"])
       s.add_development_dependency(%q<rdoc>, [">= 0"])
+      s.add_development_dependency(%q<pry>, [">= 0"])
     else
       s.add_dependency(%q<bundler>, ["~> 1.0.0"])
       s.add_dependency(%q<jeweler>, ["~> 1.6.2"])
       s.add_dependency(%q<rdoc>, [">= 0"])
+      s.add_dependency(%q<pry>, [">= 0"])
     end
   else
     s.add_dependency(%q<bundler>, ["~> 1.0.0"])
     s.add_dependency(%q<jeweler>, ["~> 1.6.2"])
     s.add_dependency(%q<rdoc>, [">= 0"])
+    s.add_dependency(%q<pry>, [">= 0"])
   end
 end
 

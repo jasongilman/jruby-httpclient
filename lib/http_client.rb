@@ -17,7 +17,7 @@ if defined?(JRUBY_VERSION)
   require 'httpmime-4.1.1'
   require 'httpclient-4.1.1'
   require 'httpclient-cache-4.1.1'
-
+  require 'extras'
   require 'client_configuration'
 else
   MRI_HTTP_CLIENT_DIR = File.join(HTTP_CLIENT_DIR, 'mri')

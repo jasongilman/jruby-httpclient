@@ -84,7 +84,8 @@ module HTTP
   private
   HttpGet = org.apache.http.client.methods.HttpGet
   HttpPost = org.apache.http.client.methods.HttpPost
-  HttpDelete = org.apache.http.client.methods.HttpDelete
+  # A type defined in src/extras that will allow a delete to contain a body
+  HttpDelete = Java::Extras::EntityEnclosingDelete
   HttpPut = org.apache.http.client.methods.HttpPut
   BasicNameValuePair = org.apache.http.message.BasicNameValuePair
   URIUtils = org.apache.http.client.utils.URIUtils
